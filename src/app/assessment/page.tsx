@@ -45,17 +45,18 @@ export default function AssessmentPage() {
   const handleSubmit = async () => {
     setSubmitting(true);
     try {
-      await fetch(
-        "https://alluring-encouragement-production.up.railway.app/public/lead_v3",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            ...answers,
-            source: "csafe-consultants.sintra.site/assessment",
-          }),
-        }
-      );
+      await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "6e13265e-35ec-4f41-8e8b-d00a931dd1f3",
+          subject: "New Fit Assessment Submission — C-Safe Wellness Group",
+          ...answers,
+        }),
+      });
     } catch {
       // proceed regardless
     }

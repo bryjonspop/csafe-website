@@ -97,25 +97,32 @@ export default function Home() {
   });
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
+    setError(false);
     try {
-      await fetch(
-        "https://alluring-encouragement-production.up.railway.app/public/lead_v3",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            ...formData,
-            source: "csafe-wellness-group.sintra.site",
-          }),
-        }
-      );
-      setSubmitted(true);
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "6e13265e-35ec-4f41-8e8b-d00a931dd1f3",
+          subject: "New Inquiry — C-Safe Wellness Group",
+          ...formData,
+        }),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        setError(true);
+      }
     } catch {
-      setSubmitted(true);
+      setError(true);
     } finally {
       setSubmitting(false);
     }
@@ -620,6 +627,11 @@ export default function Home() {
               >
                 {submitting ? "Sending..." : "Request a Confidential Call"}
               </button>
+              {error && (
+                <p className="text-red-400 text-sm text-center">
+                  Something went wrong. Please try again or email us directly at bryan@csafeteam.com
+                </p>
+              )}
               <p className="text-center text-slate-600 text-xs">
                 Your inquiry is 100% confidential. We do not share client information under any circumstances.
               </p>
