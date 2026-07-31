@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Nav from "@/components/Nav";
 
 const ARTICLES = [
   {
@@ -36,26 +37,7 @@ const ARTICLES = [
 export default function InsightsPage() {
   return (
     <div className="min-h-screen bg-[#0a1628] text-white font-sans">
-      {/* Nav */}
-      <nav className="fixed top-0 w-full z-50 bg-[#0a1628]/95 backdrop-blur border-b border-[#1e3a5f]">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3">
-            <img src="/csafe-logo.png" alt="C-Safe Wellness Group" className="w-10 h-10 object-contain" />
-            <span className="text-xl font-bold text-white">
-              C-Safe <span className="text-[#c9a84c]">Wellness Group</span>
-            </span>
-          </Link>
-          <div className="hidden md:flex items-center gap-7 text-sm text-slate-300">
-            <Link href="/#services" className="hover:text-[#c9a84c] transition-colors">Services</Link>
-            <Link href="/team" className="hover:text-[#c9a84c] transition-colors">Our Team</Link>
-            <Link href="/insights" className="text-[#c9a84c] font-semibold">Insights</Link>
-            <Link href="/assessment" className="hover:text-[#c9a84c] transition-colors">Fit Assessment</Link>
-            <Link href="/#contact" className="bg-[#c9a84c] text-[#0a1628] px-4 py-2 rounded font-semibold hover:bg-[#b8963f] transition-colors">
-              Request a Confidential Call
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <Nav active="Insights" />
 
       {/* Header */}
       <section className="pt-36 pb-16 px-6">

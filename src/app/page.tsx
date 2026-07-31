@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Nav from "@/components/Nav";
 
 const WELLNESS_CALENDAR = [
   {
@@ -87,7 +88,6 @@ const TAG_COLORS: Record<string, string> = {
 };
 
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -130,67 +130,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#0a1628] text-white font-sans">
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-[#0a1628]/95 backdrop-blur border-b border-[#1e3a5f]">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <img src="/csafe-logo.png" alt="C-Safe Wellness Group logo" className="w-10 h-10 object-contain" />
-            <span className="text-xl font-bold tracking-tight text-white">
-              C-Safe <span className="text-[#c9a84c]">Wellness Group</span>
-            </span>
-          </div>
-
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8 text-sm text-slate-300">
-            <a href="#services" className="hover:text-[#c9a84c] transition-colors">Services</a>
-            <a href="#wellness-calendar" className="hover:text-[#c9a84c] transition-colors">Wellness Calendar</a>
-            <a href="#who-we-serve" className="hover:text-[#c9a84c] transition-colors">Who We Serve</a>
-            <a href="/team" className="hover:text-[#c9a84c] transition-colors">Our Team</a>
-            <a href="/insights" className="hover:text-[#c9a84c] transition-colors">Insights</a>
-            <a href="/resources/first-48" className="hover:text-[#c9a84c] transition-colors">The First 48</a>
-            <a href="/assessment" className="relative hover:text-[#c9a84c] transition-colors flex items-center gap-1.5">
-              Fit Assessment
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#c9a84c] opacity-60" style={{animationDuration: '2s'}} />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#c9a84c]" />
-              </span>
-            </a>
-            <a
-              href="#contact"
-              className="bg-[#c9a84c] text-[#0a1628] px-4 py-2 rounded font-semibold hover:bg-[#b8963f] transition-colors"
-            >
-              Request a Confidential Call
-            </a>
-          </div>
-
-          {/* Mobile menu toggle */}
-          <button
-            className="md:hidden text-white"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {menuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
-        </div>
-
-        {menuOpen && (
-          <div className="md:hidden bg-[#0d1f3c] border-t border-[#1e3a5f] px-6 py-4 flex flex-col gap-4 text-sm">
-            <a href="#services" className="text-slate-300 hover:text-[#c9a84c]" onClick={() => setMenuOpen(false)}>Services</a>
-            <a href="#wellness-calendar" className="text-slate-300 hover:text-[#c9a84c]" onClick={() => setMenuOpen(false)}>Wellness Calendar</a>
-            <a href="#who-we-serve" className="text-slate-300 hover:text-[#c9a84c]" onClick={() => setMenuOpen(false)}>Who We Serve</a>
-            <a href="#how-it-works" className="text-slate-300 hover:text-[#c9a84c]" onClick={() => setMenuOpen(false)}>How It Works</a>
-            <a href="/team" className="text-slate-300 hover:text-[#c9a84c]" onClick={() => setMenuOpen(false)}>Our Team</a>
-            <a href="/resources/first-48" className="text-slate-300 hover:text-[#c9a84c]" onClick={() => setMenuOpen(false)}>The First 48</a>
-            <a href="/assessment" className="text-slate-300 hover:text-[#c9a84c]" onClick={() => setMenuOpen(false)}>Fit Assessment</a>
-            <a href="#contact" className="text-[#c9a84c] font-semibold" onClick={() => setMenuOpen(false)}>Request a Confidential Call</a>
-          </div>
-        )}
-      </nav>
+      <Nav />
 
       {/* Hero */}
       <section className="relative min-h-screen flex items-center justify-center pt-20">
