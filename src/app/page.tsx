@@ -276,6 +276,43 @@ export default function Home() {
         </div>
       </section>
 
+      {/* The First 48 — Featured Resource */}
+      <section className="py-14 px-6 bg-[#c9a84c]">
+        <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8">
+          <div className="flex-1">
+            <p className="text-[#0a1628] text-xs font-bold uppercase tracking-widest mb-3">Free Executive Resource · Confidential</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#0a1628] mb-3">
+              The First 48 Hours: Executive Crisis Preparedness Guide
+            </h2>
+            <p className="text-[#0a1628]/75 text-base leading-relaxed mb-6">
+              Most companies have no plan when a senior leader faces a personal crisis. The first 48 hours determine whether the situation stays manageable — or becomes a reputational event. This free guide covers exactly what to do, hour by hour.
+            </p>
+            <a
+              href="/resources/first-48"
+              className="inline-flex items-center gap-2 bg-[#0a1628] text-white px-7 py-3.5 rounded font-bold hover:bg-[#0d1f3c] transition-colors"
+            >
+              Request Access — Free &amp; Confidential
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+          <div className="flex-shrink-0 hidden md:grid grid-cols-2 gap-3 w-64">
+            {[
+              { stat: "76%", label: "senior leaders report burnout" },
+              { stat: "1 in 5", label: "executives face substance concerns" },
+              { stat: "$500B+", label: "lost to impairment annually" },
+              { stat: "48 hrs", label: "window that shapes the outcome" },
+            ].map(({ stat, label }) => (
+              <div key={stat} className="bg-[#0a1628]/20 border border-[#0a1628]/20 rounded-lg p-3 text-center">
+                <div className="text-[#0a1628] font-bold text-xl">{stat}</div>
+                <div className="text-[#0a1628]/70 text-xs mt-1 leading-tight">{label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Monthly Leadership Wellness Calendar */}
       <section id="wellness-calendar" className="py-20 px-6 bg-[#0d1f3c]">
         <div className="max-w-6xl mx-auto">
@@ -333,10 +370,70 @@ export default function Home() {
             <p className="text-[#c9a84c] text-sm font-semibold uppercase tracking-widest mb-3">Ideal Partners</p>
             <h2 className="text-3xl md:text-4xl font-bold text-white">Who We Serve</h2>
             <p className="text-slate-400 mt-4 max-w-2xl mx-auto">
-              C-Safe Wellness Group works exclusively with organizations where leadership continuity is a board-level concern.
+              C-Safe Wellness Group works exclusively with organizations where leadership continuity is a board-level concern. If you are responsible for protecting your leadership team, this is built for you.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+
+          {/* Role-specific pathways */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-14">
+            {[
+              {
+                role: "Chief Human Resources Officer",
+                abbr: "CHRO / HR Leader",
+                color: "border-[#c9a84c]/40",
+                accent: "text-[#c9a84c]",
+                desc: "You are the first call when a senior leader's performance or behavior changes. C-Safe gives you a confidential, clinical pathway that protects the executive — and keeps the matter out of the HR file.",
+                cta: "Talk to C-Safe",
+              },
+              {
+                role: "General Counsel",
+                abbr: "GC / Legal",
+                color: "border-[#73a0b1]/40",
+                accent: "text-[#73a0b1]",
+                desc: "Legal exposure grows the longer a behavioral health crisis goes unmanaged. C-Safe coordinates clinical stabilization before legal strategy — reducing liability and creating the most defensible record.",
+                cta: "Request a Confidential Brief",
+              },
+              {
+                role: "Board Member or Investor",
+                abbr: "Board / PE Sponsor",
+                color: "border-[#4279ae]/40",
+                accent: "text-[#4279ae]",
+                desc: "An executive in crisis affects governance, investor confidence, and organizational continuity. C-Safe provides board-level assurance that a proactive response infrastructure is in place before it is needed.",
+                cta: "Discuss Board-Level Coverage",
+              },
+              {
+                role: "CEO or Executive Sponsor",
+                abbr: "C-Suite Leader",
+                color: "border-[#355687]/40",
+                accent: "text-[#c9a84c]",
+                desc: "Whether the concern is a peer, a direct report, or yourself — C-Safe provides a confidential, expert pathway with no public intake, no waiting lists, and no exposure to internal systems.",
+                cta: "Start a Confidential Conversation",
+              },
+            ].map(({ role, abbr, color, accent, desc, cta }) => (
+              <div key={role} className={`bg-[#0d1f3c] border ${color} rounded-xl p-7 flex flex-col gap-4 hover:bg-[#0d1f3c]/80 transition-colors`}>
+                <div>
+                  <p className={`${accent} text-xs font-bold uppercase tracking-widest mb-1`}>{abbr}</p>
+                  <h3 className="text-white font-bold text-lg leading-snug">{role}</h3>
+                </div>
+                <p className="text-slate-400 text-sm leading-relaxed flex-1">{desc}</p>
+                <a
+                  href="#contact"
+                  className={`inline-flex items-center gap-2 ${accent} text-sm font-semibold hover:underline`}
+                >
+                  {cta}
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
+              </div>
+            ))}
+          </div>
+
+          {/* Industry grid */}
+          <div className="text-center mb-6">
+            <p className="text-slate-500 text-xs uppercase tracking-widest font-semibold">Industries We Cover</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
             {[
               "PE-Backed Companies",
               "Founder-Led Businesses",
@@ -350,7 +447,7 @@ export default function Home() {
             ].map((item) => (
               <div
                 key={item}
-                className="border border-[#1e3a5f] rounded-lg px-5 py-4 text-sm text-slate-300 text-center hover:border-[#c9a84c]/40 hover:text-white transition-colors"
+                className="border border-[#1e3a5f] rounded-lg px-5 py-3 text-sm text-slate-400 text-center hover:border-[#c9a84c]/30 hover:text-slate-300 transition-colors"
               >
                 {item}
               </div>
@@ -579,48 +676,6 @@ export default function Home() {
               </p>
             </form>
           )}
-        </div>
-      </section>
-
-      {/* The First 48 Teaser */}
-      <section className="py-14 px-6 bg-[#0d1f3c] border-t border-[#1e3a5f]">
-        <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8">
-          <div className="flex-1">
-            <div className="inline-flex items-center gap-2 bg-[#c9a84c]/10 border border-[#c9a84c]/30 text-[#c9a84c] text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">
-              Free Executive Resource · Confidential
-            </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
-              The First 48 Hours
-            </h2>
-            <p className="text-slate-400 text-base leading-relaxed mb-5">
-              Organizations prepare for cyberattacks and compliance failures. Most have no plan
-              when a senior leader faces a personal crisis. Our free guide covers exactly what to
-              do — and what not to do — in the 48 hours that determine whether a situation stays
-              manageable.
-            </p>
-            <a
-              href="/resources/first-48"
-              className="inline-flex items-center gap-2 bg-[#c9a84c] text-[#0a1628] px-6 py-3 rounded font-bold hover:bg-[#b8963f] transition-colors"
-            >
-              Request Access — Free &amp; Confidential
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
-          </div>
-          <div className="flex-shrink-0 hidden md:grid grid-cols-2 gap-3 w-64">
-            {[
-              { stat: "76%", label: "senior leaders report burnout" },
-              { stat: "1 in 5", label: "executives face substance concerns" },
-              { stat: "$500B+", label: "lost to impairment annually" },
-              { stat: "48 hrs", label: "window that shapes the outcome" },
-            ].map(({ stat, label }) => (
-              <div key={stat} className="bg-[#0a1628] border border-[#1e3a5f] rounded-lg p-3 text-center">
-                <div className="text-[#c9a84c] font-bold text-xl">{stat}</div>
-                <div className="text-slate-500 text-xs mt-1 leading-tight">{label}</div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
