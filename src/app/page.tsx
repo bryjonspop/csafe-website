@@ -147,8 +147,8 @@ export default function Home() {
             B2B Executive Mental Health &amp; Wellness Advisory
           </div>
           <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6 text-white">
-            Protect Your Leadership.<br />
-            <span className="text-[#c9a84c]">Before Crisis Decides For You.</span>
+            Protecting Leadership.<br />
+            <span className="text-[#c9a84c]">Preserving Business.</span>
           </h1>
           <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed">
             C-Safe Wellness Group is a discreet, high-touch advisory firm serving C-suite teams at mid-to-large companies.
@@ -167,6 +167,18 @@ export default function Home() {
               className="border border-[#c9a84c]/50 text-[#c9a84c] px-8 py-4 rounded font-semibold text-lg hover:border-[#c9a84c] hover:bg-[#c9a84c]/10 transition-colors"
             >
               How We Help
+            </a>
+          </div>
+          <div className="mt-6 flex items-center justify-center gap-2 text-slate-400 text-sm">
+            <svg className="w-4 h-4 text-[#c9a84c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            <a href="tel:+18332723350" className="text-[#c9a84c] font-semibold hover:text-[#b8963f] transition-colors">
+              1-833-CSAFE-50
+            </a>
+            <span className="text-slate-600">·</span>
+            <a href="tel:+18332723350" className="hover:text-white transition-colors">
+              (833) 272-3350
             </a>
           </div>
 
