@@ -151,9 +151,10 @@ export default function Home() {
             <span className="text-[#c9a84c]">Preserving Business.</span>
           </h1>
           <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed">
-            C-Safe Wellness Group is a discreet, high-touch advisory firm serving C-suite teams at mid-to-large companies.
-            We provide confidential mental health and addiction support that protects your people — and your business —
-            without disruption, exposure, or guesswork.
+            C-Safe Wellness Group is an executive behavioral health advisory firm helping CEOs, boards, Human Resources
+            and General Counsel protect leadership continuity before personal crises become business crises. We provide
+            confidential crisis guidance, executive treatment placement, family support and preventive wellness
+            programming with exceptional discretion.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -342,8 +343,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {WELLNESS_CALENDAR.map(({ month, title, desc, tag }) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 max-w-3xl mx-auto">
+            {WELLNESS_CALENDAR.slice(0, 4).map(({ month, title, desc, tag }) => (
               <div
                 key={month}
                 className="bg-[#0a1628] border border-[#1e3a5f] rounded-lg p-6 hover:border-[#c9a84c]/40 transition-colors flex flex-col gap-3"
@@ -358,6 +359,18 @@ export default function Home() {
                 <p className="text-slate-400 text-sm leading-relaxed flex-1">{desc}</p>
               </div>
             ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <a
+              href="/resources"
+              className="inline-flex items-center gap-2 text-[#c9a84c] text-sm font-semibold hover:underline mb-8"
+            >
+              View the full 12-month calendar
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
           </div>
 
           <div className="mt-12 text-center">
