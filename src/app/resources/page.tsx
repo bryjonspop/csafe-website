@@ -9,6 +9,16 @@ export const metadata: Metadata = {
 
 const RESOURCES = [
   {
+    href: "/resources/the-silence",
+    category: "Executive Wellness & Leadership",
+    tag: "Free Guide",
+    readTime: "10 min read",
+    title: "The Silence Is Costing You More Than the Problem",
+    excerpt:
+      "The same instinct that built your career — handle it yourself, show no weakness, stay in control — is the instinct most likely to end it. A candid look at why leaders refuse to ask for help, and what that silence destroys at home and at work.",
+    highlight: "New",
+  },
+  {
     href: "/resources/questions-families-forget",
     category: "Treatment & Placement",
     tag: "Free Guide",
