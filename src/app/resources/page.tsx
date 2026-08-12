@@ -9,6 +9,16 @@ export const metadata: Metadata = {
 
 const RESOURCES = [
   {
+    href: "/resources/the-drink-that-came-with-the-job",
+    category: "Sales Culture & Behavioral Health",
+    tag: "Free Guide",
+    readTime: "12 min read",
+    title: "The Drink That Came With the Job",
+    excerpt:
+      "You were in the suite. The stadium. The client dinner that ran until midnight. The drink in your hand was not a choice — it was part of the job description. A clear-eyed guide to sales culture, high-risk environments, and the addiction nobody saw coming.",
+    highlight: "New",
+  },
+  {
     href: "/resources/the-silence",
     category: "Executive Wellness & Leadership",
     tag: "Free Guide",
