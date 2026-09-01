@@ -2,69 +2,48 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "C-Safe Wellness Group | Executive Mental Health & Wellness Advisory",
-  description:
-    "Discreet, high-touch B2B wellness advisory for C-suite teams. Executive treatment placement, crisis response, monthly leadership wellness programming, and leadership continuity — available upon request.",
   metadataBase: new URL("https://www.csafeteam.com"),
+  title: {
+    default: "Executive Behavioral Health Advisory & Crisis Response | C-Safe",
+    template: "%s | C-Safe Wellness Group",
+  },
+  description:
+    "C-Safe helps CEOs, boards, HR leaders and General Counsel manage executive mental health, substance-use and leadership crises with speed, discretion and expert clinical guidance.",
   alternates: {
     canonical: "https://www.csafeteam.com",
   },
   openGraph: {
-    title: "C-Safe Wellness Group | Executive Mental Health & Wellness Advisory",
-    description:
-      "Discreet, high-touch B2B wellness advisory for C-suite teams. Confidential executive mental health and addiction support, crisis response, and proactive leadership wellness.",
-    url: "https://www.csafeteam.com",
     siteName: "C-Safe Wellness Group",
+    url: "https://www.csafeteam.com",
     type: "website",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: { index: true, follow: true },
   },
 };
 
-const jsonLd = {
+const organizationSchema = {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://www.csafeteam.com/#organization",
-      name: "C-Safe Wellness Group",
-      url: "https://www.csafeteam.com",
-      logo: "https://www.csafeteam.com/csafe-logo.png",
-      description:
-        "C-Safe Wellness Group is a discreet, high-touch B2B advisory firm providing confidential mental health and addiction support exclusively for C-suite executives at mid-to-large companies. Services include executive treatment placement, crisis response, family support, transport and safety logistics, corporate crisis response, and proactive executive wellness programming.",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Atlanta",
-        addressRegion: "GA",
-        addressCountry: "US",
-      },
-      contactPoint: {
-        "@type": "ContactPoint",
-        contactType: "customer service",
-        email: "bryan@csafeteam.com",
-        url: "https://www.csafeteam.com/#contact",
-      },
-      sameAs: [],
-      foundingDate: "2026",
-      knowsAbout: [
-        "Executive mental health",
-        "C-suite addiction treatment",
-        "Executive wellness advisory",
-        "Corporate crisis response",
-        "Leadership behavioral health",
-        "Confidential executive support",
-      ],
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://www.csafeteam.com/#website",
-      url: "https://www.csafeteam.com",
-      name: "C-Safe Wellness Group",
-      publisher: { "@id": "https://www.csafeteam.com/#organization" },
-    },
+  "@type": "Organization",
+  name: "C-Safe Wellness Group",
+  alternateName: "C-Safe",
+  url: "https://www.csafeteam.com",
+  logo: "https://cdn.sintra.ai/img/DMGULRdXCX28wMNK05IRHOWovVIPZQrKntsgifAdJzk/f:jpg/rs:fit:800/czM6Ly9zaW50cmEtYnJhaW5haS1tZWRpYS9rbm93bGVkZ2UtcHJvZmlsZXMvYTk4MzIzZjYtYWQ2ZS00NjM4LWE5NTAtMmM1ZDU4NGJiYTVlL2Fzc2V0cy8zNDY5OTM4ZC00MGRhLTQ0MDgtYjMwYi1kMDZmNjI3N2U5OTUvY3NhZmUtbG9nby5wbmc",
+  description:
+    "Executive behavioral health advisory firm helping organizations manage mental health, substance-use and personal crises involving senior leaders with speed, discretion and expert clinical guidance.",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Atlanta",
+    addressRegion: "GA",
+    addressCountry: "US",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    email: "info@csafeteam.com",
+    contactType: "customer service",
+    availableLanguage: "English",
+  },
+  sameAs: [
+    "https://www.facebook.com/profile.php?id=61591192140412",
+    "https://www.instagram.com/csafeteam",
+    "https://www.tiktok.com/@csafeteam",
   ],
 };
 
@@ -79,8 +58,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
         <script
+          src="https://platform.linkedin.com/badges/js/profile.js"
+          async
+          defer
+          type="text/javascript"
+        />
+        <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
       </head>
       <body style={{ fontFamily: "'Inter', sans-serif" }}>{children}</body>
