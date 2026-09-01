@@ -363,7 +363,7 @@ export default function Home() {
 
           <div className="mt-10 text-center">
             <a
-              href="/resources"
+              href="/executive-wellness-calendar"
               className="inline-flex items-center gap-2 text-[#c9a84c] text-sm font-semibold hover:underline mb-8"
             >
               View the full 12-month calendar
